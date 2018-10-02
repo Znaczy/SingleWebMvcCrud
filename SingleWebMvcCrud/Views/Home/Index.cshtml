@@ -1,0 +1,35 @@
+﻿@model SingleWebMvcCrud.Model.Todo
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <title>Todos</title>
+</head>
+<body>
+    <form id="todoForm">
+        <table id="todosTable">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>
+                    <input asp-for="WhatIsTodo" 
+                           id="whatistodo" 
+                           required
+                           minlenght="1"
+                           placeholder="Todo" />
+                    <span asp-validation-for="WhatIsTodo"></span>  
+                    </td>
+                    <td><input type="button" id="insert" value="Add new" onclick='onAddTodo(this)' /></td>
+            </thead>
+        </table>
+        <br />
+        <div id="msg"></div>
+    </form>
+    <script src="~/lib/jquery.min.js"></script>
+    <script src="~/lib/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/index.js"></script>
+</body>
+</html>
